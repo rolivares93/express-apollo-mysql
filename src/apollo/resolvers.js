@@ -1,16 +1,19 @@
-import { sequelize } from '../database/connection.js'
+// import { sequelize } from '../database/connection.js'
 import { User } from '../database/models/User.js'
 
 export const resolvers = {
   Query: {
-    hello: async () => {
-      await sequelize.sync()
+    hello: () => 'Hello, World'
+  },
+  Mutation: {
+    createUser: async (_, data) => {
+      const email = data.email
 
       const user = await User.create({
-        email: 'e@mail.com',
+        email
       })
 
-      return `User (${user.email}) created successfully `
-    },
-  },
+      return `User "${user.email}" created successfully`
+    }
+  }
 }
