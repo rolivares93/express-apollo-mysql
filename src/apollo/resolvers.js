@@ -1,4 +1,3 @@
-// import { sequelize } from '../database/connection.js'
 import { User } from '../database/models/User.js'
 
 export const resolvers = {
