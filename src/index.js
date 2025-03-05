@@ -15,7 +15,7 @@ try {
 }
 
 await server.start()
-// await sequelize.sync()
+await sequelize.sync()
 
 app.use(
   '/graphql',
