@@ -18,9 +18,9 @@ try {
 await server.start()
 await sequelize.sync()
 
-await User.create({
-  email: 'e@mail.com'
-})
+// await User.create({
+//   email: 'e@mail.com'
+// })
 
 app.use(
   '/graphql',
