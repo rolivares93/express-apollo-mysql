@@ -4,5 +4,6 @@ import { schema } from './schema.js'
 
 export const server = new ApolloServer({
   typeDefs: schema,
-  resolvers
+  resolvers,
+  introspection: true
 })
