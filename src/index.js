@@ -3,6 +3,7 @@ import cors from 'cors'
 import express from 'express'
 import { server } from './apollo/server.js'
 import { sequelize } from './database/connection.js'
+import { User } from './database/models/User.js'
 
 const app = express()
 const port = process.env.PORT || 4321
@@ -16,6 +17,10 @@ try {
 
 await server.start()
 await sequelize.sync()
+
+await User.create({
+  email: 'e@mail.com'
+})
 
 app.use(
   '/graphql',
